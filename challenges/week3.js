@@ -1,10 +1,12 @@
 function getSquares(nums) {
-  if (nums === undefined) throw new Error("nums is required");
+  
+  //if (nums === undefined) throw new Error("nums is required");
   // Your code here!
 }
 
 function camelCaseWords(words) {
-  if (words === undefined) throw new Error("words is required");
+  return words;
+  //if (words === undefined) throw new Error("words is required");
   // Your code here!
 }
 

@@ -99,7 +99,7 @@ describe.only("reverseAllWords", () => {
   });
 });
 
-describe("countLinuxUsers", () => {
+describe.only("countLinuxUsers", () => {
   test("returns 0 if no Linux users found", () => {
     const users = [
       { name: "Heather", OS: "Windows 8", type: "Windows" },
