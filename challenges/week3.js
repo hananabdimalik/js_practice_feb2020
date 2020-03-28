@@ -6,8 +6,8 @@ function getSquares(nums) {
 }
 
 
-//if (nums === undefined) throw new Error("nums is required");
-// Your code here!
+if (nums === undefined) throw new Error("nums is required");
+//Your code here!
 
 function camelCaseWords(words) {
   let newWords = words[0]
@@ -17,9 +17,9 @@ function camelCaseWords(words) {
   return newWords;
 }
 
-// return words.toString().replace(",", "").split().charAt(2).toUpperCase()
-//if (words === undefined) throw new Error("words is required");
 
+if (words === undefined) throw new Error("words is required");
+//your code here
 
 function getTotalSubjects(people) {
   let count = 0;
@@ -29,8 +29,9 @@ function getTotalSubjects(people) {
   return count;
 }
 
-//if (people === undefined) throw new Error("people is required");
+if (people === undefined) throw new Error("people is required");
 // Your code here!
+
 
 function checkIngredients(menu, ingredient) {
   for (let i = 0; i < menu.length; i++) {
@@ -40,25 +41,33 @@ function checkIngredients(menu, ingredient) {
   }
   return false;
 }
-// if (menu === undefined) throw new Error("menu is required");
-// if (!ingredient) throw new Error("ingredient is required");
+if (menu === undefined) throw new Error("menu is required");
+if (!ingredient) throw new Error("ingredient is required");
 // Your code here!
 
 
 
+
 function duplicateNumbers(arr1, arr2) {
-  let matches =[];
-  for (let i=0; i < arr1.length; i++){
-    for (let j=0; j< arr2.length; i++){
-      if (arr1[i] === arr2[j]) matches.push(arr1[i])
+  let matches = [];
+
+  for (let i = 0; i < arr1.length; i++) {
+    let itemInArray1 = arr1[i];
+    for (let j = 0; j < arr2.length; j++) {
+      let itemInArray2 = arr2[j];
+      // IF ITEM IS IN BOTH ARRAYS
+      if (itemInArray1 === itemInArray2) {
+        // IF ITEM DOES NOT ALREADY EXIST IN DUPLICATE NUMBERS
+        if (matches.includes(itemInArray1) !== true)
+          matches.push(itemInArray1)
+      }
     }
   }
-  return matches
+  return matches.sort()
 }
-
-  // if (arr1 === undefined) throw new Error("arr1 is required");
-  // if (arr2 === undefined) throw new Error("arr2 is required");
-  // Your code here!
+if (arr1 === undefined) throw new Error("arr1 is required");
+if (arr2 === undefined) throw new Error("arr2 is required");
+// Your code here!
 
 module.exports = {
   getSquares,
