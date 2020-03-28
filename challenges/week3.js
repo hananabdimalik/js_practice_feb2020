@@ -57,7 +57,7 @@ function duplicateNumbers(arr1, arr2) {
       let itemInArray2 = arr2[j];
       // IF ITEM IS IN BOTH ARRAYS
       if (itemInArray1 === itemInArray2) {
-        // IF ITEM DOES NOT ALREADY EXIST IN DUPLICATE NUMBERS
+        // IF ITEM DOES NOT ALREADY EXIST IN DUPLICATE NUMBERS!
         if (matches.includes(itemInArray1) !== true)
           matches.push(itemInArray1)
       }
