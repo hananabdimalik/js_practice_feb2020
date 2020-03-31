@@ -74,19 +74,23 @@ function getSquareRoots(nums) {
 function findSentencesContaining(sentences, str) {
   let arr =[]
   for (let i=0; i< sentences.length; i++){
-    if (sentences[i].includes(str) && str.toUpperCase()){
+    if (sentences[i].includes(str) || sentences[i].charAt(0).startsWith(str.toUpperCase()))
       arr.push(sentences[i])
     }
-  } 
   // if (!sentences) throw new Error("sentences is required");
   // if (!str) throw new Error("str is required");
-  // // Your code here
-  console.log(arr)
+  // // Your code here && sentences.toUpperCase(str) !== true
+  // console.log(arr)
 return arr
 }
 
 function getLongestSides(triangles) {
-  if (!triangles) throw new Error("triangles is required");
+  let arr =[]
+  for (let i=0; i < triangles.length; i++){
+    arr.push(Math.max.apply(null, triangles[i]))
+  }
+return arr
+  //if (!triangles) throw new Error("triangles is required");
   // Your code here
 }
 
