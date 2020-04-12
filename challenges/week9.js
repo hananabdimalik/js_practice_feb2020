@@ -5,8 +5,19 @@
  * @returns {Number}
  */
 const sumMultiples = arr => {
-  if (arr === undefined) throw new Error("arr is required");
+ if (!arr) throw new Error("arr is required");
+ if (!arr.isArray(arr)) throw new Error ("an Array is required ")
+  let total = 0
+  arr.forEach(n => {
+    if (n % 3 === 0 || n % 5 === 0) {
+
+      total += n
+    }
+  })
+  return total
 };
+
+
 
 /**
  * This function will receive a string of characters and should return true/false depending on whether it is a valid DNA string. A valid DNA string may contain characters C, G, T or A only.
@@ -14,6 +25,7 @@ const sumMultiples = arr => {
  * @returns {Boolean}
  */
 const isValidDNA = str => {
+  
   if (str === undefined) throw new Error("str is required");
 };
 
@@ -66,6 +78,9 @@ const createMatrix = (n, fill) => {
 const areWeCovered = (staff, day) => {
   if (staff === undefined) throw new Error("staff is required");
   if (day === undefined) throw new Error("day is required");
+  if(staff.length === 0){
+    return false
+  }
 };
 
 module.exports = {

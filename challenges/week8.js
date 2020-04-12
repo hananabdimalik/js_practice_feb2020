@@ -8,13 +8,11 @@ const findNextNumber = (nums, n) => {
     }
   }
   return null
-
 }
 
 //loop through the array
 //if the value of n is same as the value of nums[i], add one to the index to get the next one
 //then return the next one in the list
-
 
 // if (nums === undefined) throw new Error("nums is required");
 // if (n === undefined) throw new Error("n is required");
@@ -22,33 +20,45 @@ const findNextNumber = (nums, n) => {
 
 
 const count1sand0s = str => {
-  let obj = {}
-  let newStr = str.split('|')
-  console.log(newStr)
-  let count = 0
-  for (let i = 0; i < newStr.length; i++) {
-    if (newStr[i] === '1') {
-      count++
-      console.log(count)
-
-    // }
-    // count2nd = 0
-    // if (str[i] === 0) {
-    //   count2nd++
-    // }
+  const obj = {};
+  for (let i = 0; i < str.length; i++) {
+    const char = str[i].replace(/[^a-zA-Z0-9]/g, "")
+    console.log(char)
+    if (obj[char] === undefined) {
+      obj[char] = 1
+    } else {
+      obj[char] += 1
+    }
   }
+  console.log(obj)
+  return obj
 }
+// let obj = {}
+// let newStr = str.split('|')
+// console.log(newStr)
+// let count = 0
+// for (let i = 0; i < newStr.length; i++) {
+//   if (newStr[i] === '1') {
+//     count++
+//     console.log(count)
 
-  //create an a var that holds an empty obj
-  //convert string to array via split method 
-  //loop through the array
-  // if str === number, count ++
-  //push results back to an object
+// }
+// count2nd = 0
+// if (str[i] === 0) {
+//   count2nd++
+// }
 
 
-  // if (str === undefined) throw new Error("str is required");
-  // // Your code here!
-};
+//create an a var that holds an empty obj
+//convert string to array via split method 
+//loop through the array
+// if str === number, count ++
+//push results back to an object
+
+
+// if (str === undefined) throw new Error("str is required");
+// // Your code here!
+
 
 const reverseNumber = n => {
   return parseFloat(n.toString().split('').reverse().join(''))
@@ -72,17 +82,15 @@ const sumArrays = arrs => {
 
 
 const arrShift = arr => {
+  // console.log(arr)
+  let arrShift = arr.reverse()
+  console.log(arrShift)
+  return arrShift
+  };
+  // return arr.reverse(arr.slice(-1)[0], arr[0])
 
-  let firstNumber = arr[0]
-  let lastNumber = arr.slice(-1)[0]
-  let temp = 
- temp = lastNumber;
-lastNumber = firstNumber 
-
-  console.log(firstNumber)
-  // let swapNumber = firstNumber
-  // let swapNumberTwo = lastNumber
-  // console.log(lastNumber)
+  // let firstNumber = arr[0]
+  // let lastNumber = arr.slice(-1)[0]
 
   //store index 1 in a var
   //store the last value in another var
@@ -91,50 +99,51 @@ lastNumber = firstNumber
 
   // if (arr === undefined) throw new Error("arr is required");
   // Your code here!
-};
+
+
 
 const findNeedle = (haystack, searchTerm) => {
-
-  // for (searchTerm in haystack){
-  for (searchTerm in haystack) {
-    if (haystack.includes(searchTerm) === " ") {
+  for (let key in haystack) {
+    // console.log(haystack[key])
+    if (haystack[key].includes(searchTerm.toLowerCase())) {
       return true
+    } else {
+      return false
     }
-
   }
-  // loop through an object via for in method
-  // using conditional statement, if condition is met, return true
-  //else return false
-
-  // if (haystack === undefined) throw new Error("haystack is required");
-  // if (searchTerm === undefined) throw new Error("searchTerm is required");
-  // Your code here!
 };
+// loop through an object via for in method
+// using conditional statement, if condition is met, return true
+//else return false
 
+// if (haystack === undefined) throw new Error("haystack is required");
+// if (searchTerm === undefined) throw new Error("searchTerm is required");
+// Your code here!
 const getWordFrequencies = str => {
-  let obj = {};
 
-  // convert string to array then remove quoates
-  // loop through the array
-  //start count from 0
-  // in an if statement, if word[i]=== word[i], count on 
-  //push into object word, count
-  console.log(arr)
-  // let count = 0;
+  const frequencies = {};
+ //console.log(str.split(' '))
+    const char = str.toLowerCase().split(' ')
+    //console.log(char)
 
-  // for (let i=0; i < str.length; i++){
-  //   if ()
-  // } else {
-  //   let value = '${count}'${}
-  // }
-
-  // return str.split(' ').length
-
-
-  // if (str === undefined) throw new Error("str is required");
-  // // Your code here!
-
+  for (let i = 0; i <char.length; i++) {
+  
+  let newString = char[i].replace(/[^a-zA-Z0-9]/g, "")
+    if (frequencies[newString] === undefined) {
+     
+      //console.log(newString)
+      frequencies[newString] = 1
+    } else {
+      frequencies[newString] += 1
+    }
+  }
+console.log(frequencies)
+  return frequencies
 };
+// if (str === undefined) throw new Error("str is required");
+// // Your code here!
+
+
 
 module.exports = {
   findNextNumber,
