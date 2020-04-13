@@ -62,5 +62,10 @@ const falsyString = ['M', 'I', 'L', 'K', 'B', 'R', 'E', 'D']
 }) 
 });
 
+describe.only("getComplementaryDNA",() => {
+    test("it returns the complementary DNA base pair", () => {
+expect(getComplementaryDNA('ACTG')).toBe('TGAC');
+    });
+});
 
 
