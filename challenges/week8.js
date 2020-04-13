@@ -104,12 +104,12 @@ const arrShift = arr => {
 // if (arr === undefined) throw new Error("arr is required");
 // Your code here!
 
-let 
+
 
 const findNeedle = (haystack, searchTerm) => {
 
   for (let key in haystack) {
-    // console.log(haystack[key].toLowerCase())
+   console.log(haystack[key].toLowerCase())
     // console.log(haystack[key]
     if (haystack[key].toLowerCase() === searchTerm) {
 
@@ -119,7 +119,7 @@ const findNeedle = (haystack, searchTerm) => {
     }
   }
 };
-//
+
 // loop through an object via for in method
 // using conditional statement, if condition is met, return true
 //else return false
