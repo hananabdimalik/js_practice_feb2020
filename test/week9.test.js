@@ -75,6 +75,11 @@ describe("getComplementaryDNA", () => {
 });
 
 describe("isItPrime", () => {
+    test("it returns error if number is undefined", () => {
+        expect(() => {
+            isItPrime();
+        }).toThrow("n is required")
+    });
     test("it returns true if number is prime", () => {
         const n = [3, 5, 7, 11, 13]
         expect(isItPrime(n)).toBe(true)
