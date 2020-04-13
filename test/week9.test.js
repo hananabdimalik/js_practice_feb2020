@@ -62,31 +62,5 @@ const falsyString = ['M', 'I', 'L', 'K', 'B', 'R', 'E', 'D']
 }) 
 });
 
-describe.only("getComplementaryDNA",() => {
-    test("it returns the complementary DNA base pair", () => {
-expect(getComplementaryDNA('ACTG')).toBe('TGAC');
-    });
-});
 
 
-// describe ("areWeCovered", () => {
-//     test("it returns false if there are no staff at all", () => {
-//         expect( areWeCovered ([], "Sunday")) .toBe(false);
-//         expect( areWeCovered ([], "Monday")) .toBe(false);
-//         expect( areWeCovered ([], "Tuesday")) .toBe(false);
-//         expect( areWeCovered ([], "Wednesday")) .toBe(false);
-//         expect( areWeCovered ([], "Thursday")) .toBe(false);
-//         expect( areWeCovered ([], "Friday")) .toBe(false);
-//         expect( areWeCovered ([], "Saturday")) .toBe(false);
-// })
-// test("returns false if there are staff but < 3 that are not schedulded to work", () => {
-// const staff = [
-//     {name: 'gary', rota: ["Monday, 'Tuesday"]},
-//     {name: 'Mary', rota: ["Monday, 'Tuesday"]},
-//     {name: 'Sam', rota: ["Monday, 'Tuesday"]},
-//     {name: 'Betty', rota: ["Monday, 'Tuesday"]},
-
-// ];
-// expect(areWeCovered(staff, "wednesday")).toBe(false);
-// });
-// });

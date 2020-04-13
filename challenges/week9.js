@@ -40,14 +40,7 @@ const isValidDNA = str => {
  * @returns {String}
  */
 const getComplementaryDNA = str => {
-  if (str === undefined) throw new Error("str is required");
-  let newStr = ' '
- for (let i=0; i< str.length; i++){
-   if (str[i]=== 'A') {
-     newStr.push('T')
-   }
- }
-console.log(newStr)
+
 };
 
 
