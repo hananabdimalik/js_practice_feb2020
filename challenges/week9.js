@@ -66,6 +66,12 @@ return newStr.toString(' ').replace(/[^a-zA-Z0-9]/g, "")
  */
 const isItPrime = n => {
   if (n === undefined) throw new Error("n is required");
+  //console.log(n)
+  for (let i=0; i < n.length; i++){
+    if (n[i] / 1 === n[i] && n[i] / n[i] === 1 ){
+      return true
+    }
+  }
 };
 
 /**

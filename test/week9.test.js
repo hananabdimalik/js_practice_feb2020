@@ -76,8 +76,8 @@ describe("getComplementaryDNA", () => {
 
 describe("isItPrime", () => {
     test("it returns true if number is prime", () => {
-        const result = [1, 3, 5, 7, 11, 13]
-        expect(isItPrime(result)).toBe(true)
+        const n = [3, 5, 7, 11, 13]
+        expect(isItPrime(n)).toBe(true)
     });
 });
 
