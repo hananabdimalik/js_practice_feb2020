@@ -18,35 +18,38 @@ const findNextNumber = (nums, n) => {
 // if (n === undefined) throw new Error("n is required");
 // Your code here!
 
+//  // console.log(char)
+//   if (obj[char] === undefined) {
+//     obj[char] = 1
+//   } else {
+//     obj[char] += 1
+//   }
+
 
 const count1sand0s = str => {
-  const obj = {};
+  const obj =
+  {
+    1: 0,
+    0: 0
+  };
   for (let i = 0; i < str.length; i++) {
-    const char = str[i].replace(/[^a-zA-Z0-9]/g, "")
-    console.log(char)
-    if (obj[char] === undefined) {
-      obj[char] = 1
-    } else {
-      obj[char] += 1
+    if (str[i] === '1') {
+      obj[1]+= 1
+
+    } else if (str[i] === '0') {
+      obj[0] +=1 
     }
-  }
-  console.log(obj)
+  } 
   return obj
 }
-// let obj = {}
-// let newStr = str.split('|')
-// console.log(newStr)
-// let count = 0
-// for (let i = 0; i < newStr.length; i++) {
-//   if (newStr[i] === '1') {
-//     count++
-//     console.log(count)
+// let tally = {
+//   option1: 0,
+//   option2:0
+// }
+// if(this==that){
+//   tally.option1 +=1
+// }
 
-// }
-// count2nd = 0
-// if (str[i] === 0) {
-//   count2nd++
-// }
 
 
 //create an a var that holds an empty obj
@@ -82,36 +85,41 @@ const sumArrays = arrs => {
 
 
 const arrShift = arr => {
-  // console.log(arr)
+
+  console.log(arr)
   let arrShift = arr.reverse()
   console.log(arrShift)
   return arrShift
-  };
-  // return arr.reverse(arr.slice(-1)[0], arr[0])
+};
+// return arr.reverse(arr.slice(-1)[0], arr[0])
 
-  // let firstNumber = arr[0]
-  // let lastNumber = arr.slice(-1)[0]
+// let firstNumber = arr[0]
+// let lastNumber = arr.slice(-1)[0]
 
-  //store index 1 in a var
-  //store the last value in another var
-  //assign temp with the last value
-  //then assign first value the last value 
+//store index 1 in a var
+//store the last value in another var
+//assign temp with the last value
+//then assign first value the last value 
 
-  // if (arr === undefined) throw new Error("arr is required");
-  // Your code here!
+// if (arr === undefined) throw new Error("arr is required");
+// Your code here!
 
-
+let 
 
 const findNeedle = (haystack, searchTerm) => {
+
   for (let key in haystack) {
-    // console.log(haystack[key])
-    if (haystack[key].includes(searchTerm.toLowerCase())) {
+    // console.log(haystack[key].toLowerCase())
+    // console.log(haystack[key]
+    if (haystack[key].toLowerCase() === searchTerm) {
+
       return true
     } else {
       return false
     }
   }
 };
+//
 // loop through an object via for in method
 // using conditional statement, if condition is met, return true
 //else return false
@@ -122,22 +130,22 @@ const findNeedle = (haystack, searchTerm) => {
 const getWordFrequencies = str => {
 
   const frequencies = {};
- //console.log(str.split(' '))
-    const char = str.toLowerCase().split(' ')
-    //console.log(char)
+  //console.log(str.split(' '))
+  const char = str.toLowerCase().split(' ')
+  //console.log(char)
 
-  for (let i = 0; i <char.length; i++) {
-  
-  let newString = char[i].replace(/[^a-zA-Z0-9]/g, "")
+  for (let i = 0; i < char.length; i++) {
+
+    let newString = char[i].replace(/[^a-zA-Z0-9]/g, "")
     if (frequencies[newString] === undefined) {
-     
+
       //console.log(newString)
       frequencies[newString] = 1
     } else {
       frequencies[newString] += 1
     }
   }
-console.log(frequencies)
+  console.log(frequencies)
   return frequencies
 };
 // if (str === undefined) throw new Error("str is required");

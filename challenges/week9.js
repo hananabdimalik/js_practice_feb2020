@@ -6,7 +6,7 @@
  */
 const sumMultiples = arr => {
  if (!arr) throw new Error("arr is required");
- if (!arr.isArray(arr)) throw new Error ("an Array is required ")
+ if (!Array.isArray(arr)) throw new Error ("an Array is required");
   let total = 0
   arr.forEach(n => {
     if (n % 3 === 0 || n % 5 === 0) {
@@ -25,8 +25,14 @@ const sumMultiples = arr => {
  * @returns {Boolean}
  */
 const isValidDNA = str => {
-  
-  if (str === undefined) throw new Error("str is required");
+ if (str === undefined) throw new Error("str is required");
+  for (let i=0; i< str.length; i++){
+    if (str[i].includes('A', 'C', 'T', 'G')){
+      return true
+    } else {
+      return false 
+    }
+  }
 };
 
 /**
@@ -36,7 +42,16 @@ const isValidDNA = str => {
  */
 const getComplementaryDNA = str => {
   if (str === undefined) throw new Error("str is required");
+  let newStr = ' '
+ for (let i=0; i< str.length; i++){
+   if (str[i]=== 'A') {
+     newStr.push('T')
+   }
+ }
+console.log(newStr)
 };
+
+
 
 /**
  * This function should receive a number and return true/false depending on whether it is a prime number or not. A prime number is a number that can only be divided evenly by 1 and itself (for example, 7)
