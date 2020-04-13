@@ -85,7 +85,7 @@ describe("isItPrime", () => {
         expect(isItPrime(n)).toBe(true)
     });
     test ("it returns false if numbers are not prime", () => {
-        const nums = [2, 4, 6, 8, 10]
+        const nums = [4, 6, 8, 10]
         expect(isItPrime(nums)).toBe(false)
     });
 });
