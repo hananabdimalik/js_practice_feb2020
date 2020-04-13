@@ -40,7 +40,21 @@ const isValidDNA = str => {
  * @returns {String}
  */
 const getComplementaryDNA = str => {
-
+  if (str === undefined) throw new Error("str is required");
+  let newStr = []
+ for (let i=0; i< str.length; i++){
+   if (str[i]=== 'A') {
+     newStr.push('T')
+   } else if (str[i]=== 'C'){
+     newStr.push('G')
+   } else if (str[i]=== 'T'){
+    newStr.push('A')
+   }else if (str[i]=== 'G'){
+     newStr.push('C')
+   }
+ }
+// console.log(newStr.toString('').replace(/[^a-zA-Z0-9]/g, ""))
+return newStr.toString(' ').replace(/[^a-zA-Z0-9]/g, "")
 };
 
 
