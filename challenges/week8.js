@@ -3,7 +3,7 @@ const findNextNumber = (nums, n) => {
   for (let i = 0; i < nums.length - 1; i++) {
 
     if (nums[i] === n) {
-      console.log(nums[i + 1])
+      // console.log(nums[i + 1])
       return nums[i + 1]
     }
   }
@@ -34,12 +34,12 @@ const count1sand0s = str => {
   };
   for (let i = 0; i < str.length; i++) {
     if (str[i] === '1') {
-      obj[1]+= 1
+      obj[1] += 1
 
     } else if (str[i] === '0') {
-      obj[0] +=1 
+      obj[0] += 1
     }
-  } 
+  }
   return obj
 }
 // let tally = {
@@ -52,11 +52,11 @@ const count1sand0s = str => {
 
 
 
-//create an a var that holds an empty obj
-//convert string to array via split method 
+//create an a var that holds an obj of 1 and 0, where the property is starts from 0
 //loop through the array
-// if str === number, count ++
-//push results back to an object
+// if str === number 1, add 1 into the object of number 1 obj[1]
+// if str === number 0, add 1 into the obj of number 0 obj[0]
+//return object
 
 
 // if (str === undefined) throw new Error("str is required");
@@ -84,49 +84,71 @@ const sumArrays = arrs => {
 // Your code here! const reduced= (accumulator, currentValue) => accumulator + currentValue;
 
 
+// const arr1 = [1, 2, [3, 4]];
+// arr1.flat(); 
+// [1, 2, 3, 4]
+
 const arrShift = arr => {
+  let reversedArr = []
+  let firstNum = arr[0]
+  let lastNum = arr.slice(-1)[0]
 
-  console.log(arr)
-  let arrShift = arr.reverse()
-  console.log(arrShift)
-  return arrShift
-};
-// return arr.reverse(arr.slice(-1)[0], arr[0])
 
-// let firstNumber = arr[0]
-// let lastNumber = arr.slice(-1)[0]
+  if (arr.length > 2) {
+    const midNums = arr.slice(1, arr.length - 1)
+    reversedArr.push(lastNum, midNums, firstNum)
+    return reversedArr.flat();
+  }
+  else {
+    return arr.reverse()
+  }
+}
 
-//store index 1 in a var
+//shorter versions
+// let days = ["M", "T", "W", "Th", "F"]
+// let firstDay= days.shift()
+// let lastDay= days.pop()
+// // let days = [T,W,Th]
+// days.unshift(lastDay)
+// days.push(firstDay)
+//  console.log(days)
+
+//create a empty array in a var
+//store first number into a var
 //store the last value in another var
-//assign temp with the last value
-//then assign first value the last value 
+//using an if statement, if number of arrays is more than 2, push into the empty array the last, mid and first var
+//create a const for mid number. use slice(-1, arr.length-1) method to get the mid numbers
+//push into the new arr the swapped numbered using  the flat method to elimate the square barackets around the mid nums 
+//else, if numbers in the array are less than 2, return reversed arr using arr.reversed method.
+
+
 
 // if (arr === undefined) throw new Error("arr is required");
 // Your code here!
 
 
-
 const findNeedle = (haystack, searchTerm) => {
-
   for (let key in haystack) {
-   console.log(haystack[key].toLowerCase())
-    // console.log(haystack[key]
-    if (haystack[key].toLowerCase() === searchTerm) {
-
-      return true
-    } else {
-      return false
+    if (typeof (haystack[key]) === 'string') {
+      if (haystack[key].toLowerCase().includes(searchTerm.toLowerCase())) {
+        return true
+      }
     }
   }
-};
+  return false
+}
+
 
 // loop through an object via for in method
-// using conditional statement, if condition is met, return true
+//lower the case of the property of the object
+//only check the value of the string
+// using conditional statement, if the obj contains a string 
 //else return false
 
 // if (haystack === undefined) throw new Error("haystack is required");
 // if (searchTerm === undefined) throw new Error("searchTerm is required");
 // Your code here!
+
 const getWordFrequencies = str => {
 
   const frequencies = {};

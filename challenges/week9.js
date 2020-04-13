@@ -29,10 +29,9 @@ const isValidDNA = str => {
   for (let i=0; i< str.length; i++){
     if (str[i].includes('A', 'C', 'T', 'G')){
       return true
-    } else {
-      return false 
-    }
+    } 
   }
+   return false 
 };
 
 /**
