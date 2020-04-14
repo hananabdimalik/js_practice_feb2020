@@ -91,6 +91,19 @@ describe("isItPrime", () => {
 });
 
 describe("it returns an array of n items", () => {
+
+test("it returns an error message if n is undefined", () => {
+    expect(()=> {
+        createMatrix();
+    }).toThrow("n is required")
+})
+
+test("it returns an error message if fill is undefined", ()=> {
+    expect(()=> {
+        createMatrix("");
+    }).toThrow("fill is required")
+})
+
     test("with an item bag and given number(n) 5 should give repeats of word bag 5 times in a matrix", () =>{
         expect(createMatrix(5, "bag")).toEqual([ 
                                               ['bag', 'bag', 'bag', 'bag', 'bag'],
