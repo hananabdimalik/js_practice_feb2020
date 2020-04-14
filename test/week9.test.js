@@ -74,20 +74,20 @@ describe("getComplementaryDNA", () => {
     });
 });
 
-describe("isItPrime", () => {
+describe.only("isItPrime", () => {
     test("it returns error if number is undefined", () => {
         expect(() => {
             isItPrime();
         }).toThrow("n is required")
     });
+   test("it returns false if numbers are not prime", () => {
+        const nums = [4, 6, 8, 10]
+        expect(isItPrime(nums)).toBe(false)
+    }); 
     test("it returns true if numbers are prime", () => {
         const n = [3, 5, 7, 11, 13]
         expect(isItPrime(n)).toBe(true)
-    });
-    test("it returns false if numbers are not prime", () => {
-        const nums = [4, 6, 8, 10]
-        expect(isItPrime(nums)).toBe(false)
-    });
+    });  
 });
 
 describe("createMatrix", () => {

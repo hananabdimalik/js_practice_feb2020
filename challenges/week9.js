@@ -66,13 +66,17 @@ const getComplementaryDNA = str => {
  */
 const isItPrime = n => {
   if (n === undefined) throw new Error("n is required");
-  for (let i = 0; i < n.length; i++) {
-    if (n[i] % 2 === 1) {
-      return true
+
+  for (let i = 2; i < n; i++) {
+    if (n % i === 0) {
+      return false;
     }
   }
-  return false
-};
+  return true
+}
+
+
+
 
 /**
  * This function should receive a number and return an array of n arrays, each filled with n items. The parameter "fill" should be used as the filler of the arrays. For example, given parameters 3 and "foo" the resulting matrix should be:

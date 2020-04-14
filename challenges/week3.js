@@ -1,4 +1,5 @@
 function getSquares(nums) {
+  if (nums === undefined) throw new Error("nums is required");
   const squaredNum = nums.map(function (n) {
     return n * n
   })
@@ -6,10 +7,11 @@ function getSquares(nums) {
 }
 
 
-if (nums === undefined) throw new Error("nums is required");
+
 //Your code here!
 
 function camelCaseWords(words) {
+  if (words === undefined) throw new Error("words is required");
   let newWords = words[0]
   for (let i = 1; i < words.length; i++) {
     newWords += words[i].charAt(0).toUpperCase() + words[i].slice(1)
@@ -18,10 +20,11 @@ function camelCaseWords(words) {
 }
 
 
-if (words === undefined) throw new Error("words is required");
+
 //your code here
 
 function getTotalSubjects(people) {
+if (people === undefined) throw new Error("people is required");
   let count = 0;
   for (let i = 0; i < people.length; i++) {
     count += people[i].subjects.length
@@ -29,11 +32,13 @@ function getTotalSubjects(people) {
   return count;
 }
 
-if (people === undefined) throw new Error("people is required");
+
 // Your code here!
 
 
 function checkIngredients(menu, ingredient) {
+if (menu === undefined) throw new Error("menu is required");
+if (!ingredient) throw new Error("ingredient is required");
   for (let i = 0; i < menu.length; i++) {
     if (menu[i].ingredients.includes(ingredient)) {
       return true
@@ -41,15 +46,16 @@ function checkIngredients(menu, ingredient) {
   }
   return false;
 }
-if (menu === undefined) throw new Error("menu is required");
-if (!ingredient) throw new Error("ingredient is required");
+
 // Your code here!
 
 
 
 
 function duplicateNumbers(arr1, arr2) {
-  let matches = [];
+  if (arr1 === undefined) throw new Error("arr1 is required");
+if (arr2 === undefined) throw new Error("arr2 is required");
+let matches = [];
 
   for (let i = 0; i < arr1.length; i++) {
     let itemInArray1 = arr1[i];
@@ -65,8 +71,7 @@ function duplicateNumbers(arr1, arr2) {
   }
   return matches.sort()
 }
-if (arr1 === undefined) throw new Error("arr1 is required");
-if (arr2 === undefined) throw new Error("arr2 is required");
+
 // Your code here!
 
 module.exports = {
