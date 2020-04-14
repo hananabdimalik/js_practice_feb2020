@@ -89,6 +89,12 @@ const createMatrix = (n, fill) => {
   if (n === undefined) throw new Error("n is required");
   if (fill === undefined) throw new Error("fill is required");
 
+let replicateArr = []
+  for (let i = 0; i < n; i ++){
+  replicateArr.push(fill)
+}
+return Array(n).fill(Array(replicateArr)).flat()
+
 };
 
 /**
