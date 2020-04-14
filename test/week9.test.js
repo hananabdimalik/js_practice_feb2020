@@ -59,7 +59,7 @@ describe("isValidDNA", () => {
         const falsyString = ['M', 'I', 'L', 'K', 'B', 'R', 'E', 'D']
         expect(isValidDNA(falsyString)).toBe(false)
 
-    })
+    });
 });
 
 describe("getComplementaryDNA", () => {
@@ -67,7 +67,7 @@ describe("getComplementaryDNA", () => {
         expect(() => {
             getComplementaryDNA();
         }).toThrow("str is required")
-    })
+    });
 
     test("it returns the complementary DNA base pair", () => {
         expect(getComplementaryDNA('ACTG')).toBe('TGAC');
@@ -84,7 +84,7 @@ describe("isItPrime", () => {
         const n = [3, 5, 7, 11, 13]
         expect(isItPrime(n)).toBe(true)
     });
-    test ("it returns false if numbers are not prime", () => {
+    test("it returns false if numbers are not prime", () => {
         const nums = [4, 6, 8, 10]
         expect(isItPrime(nums)).toBe(false)
     });
@@ -92,27 +92,37 @@ describe("isItPrime", () => {
 
 describe("it returns an array of n items", () => {
 
-test("it returns an error message if n is undefined", () => {
-    expect(()=> {
-        createMatrix();
-    }).toThrow("n is required")
-})
+    test("it returns an error message if n is undefined", () => {
+        expect(() => {
+            createMatrix();
+        }).toThrow("n is required")
+    });
 
-test("it returns an error message if fill is undefined", ()=> {
-    expect(()=> {
-        createMatrix("");
-    }).toThrow("fill is required")
-})
+    test("it returns an error message if fill is undefined", () => {
+        expect(() => {
+            createMatrix("");
+        }).toThrow("fill is required")
+    });
 
-    test("with an item bag and given number(n) 5 should give repeats of word bag 5 times in a matrix", () =>{
-        expect(createMatrix(5, "bag")).toEqual([ 
-                                              ['bag', 'bag', 'bag', 'bag', 'bag'],
-                                              ['bag', 'bag', 'bag', 'bag', 'bag'],
-                                              ['bag', 'bag', 'bag', 'bag', 'bag'],
-                                              ['bag', 'bag', 'bag', 'bag', 'bag'], 
-                                              ['bag', 'bag', 'bag', 'bag', 'bag']])
-    })
-})
+    test("with an item bag and given number(n) 5 should turn repeats of word bag 5 times in an array, in a matrix", () => {
+        expect(createMatrix(5, "bag")).toEqual([
+            ['bag', 'bag', 'bag', 'bag', 'bag'],
+            ['bag', 'bag', 'bag', 'bag', 'bag'],
+            ['bag', 'bag', 'bag', 'bag', 'bag'],
+            ['bag', 'bag', 'bag', 'bag', 'bag'],
+            ['bag', 'bag', 'bag', 'bag', 'bag']])
+    });
+});
+test("with the word speed and number 2 should return repeats of the word speed 2 times in an array, in a matrix", () => {
+    expect(createMatrix(2, "speed")).toEqual([
+        ["speed", "speed"],
+        ["speed", "speed"]
+    ]);
+});
+
+
+
+
 
 // describe ("areWeCovered", () => {
 //     test("it returns false if there are no staff at all", () => {

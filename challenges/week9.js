@@ -93,9 +93,7 @@ let replicateArr = []
   for (let i = 0; i < n; i ++){
   replicateArr.push(fill)
 }
-//console.log(Array(n).fill(Array(replicateArr)).flat())
 return Array(n).fill(Array(replicateArr)).flat()
-  // return replicateArr;
 };
 
 /**
