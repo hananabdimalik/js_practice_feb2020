@@ -112,6 +112,17 @@ const areWeCovered = (staff, day) => {
   if (staff === undefined) throw new Error("staff is required");
   if (day === undefined) throw new Error("day is required");
 
+
+  for (let i = 0; i < day.length; i++) {
+    //console.log(day)
+    if (day.length > 1 && staff.length === 0) {
+      return false
+    } else if (day.length > 1 && staff.length > 3) {
+      return false
+    } else if (day.length > 1 && staff.length === 3) {
+      return true;
+    }
+  }
 };
 module.exports = {
   sumMultiples,
