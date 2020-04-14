@@ -90,6 +90,17 @@ describe("isItPrime", () => {
     });
 });
 
+describe("it returns an array of n items", () => {
+    test("with an item bag and given number(n) 5 should give repeats of word bag 5 times in a matrix", () =>{
+        expect(createMatrix(5, "bag")).toEqual([ 
+                                              ['bag', 'bag', 'bag', 'bag', 'bag'],
+                                              ['bag', 'bag', 'bag', 'bag', 'bag'],
+                                              ['bag', 'bag', 'bag', 'bag', 'bag'],
+                                              ['bag', 'bag', 'bag', 'bag', 'bag'], 
+                                              ['bag', 'bag', 'bag', 'bag', 'bag']])
+    })
+})
+
 // describe ("areWeCovered", () => {
 //     test("it returns false if there are no staff at all", () => {
 //         expect( areWeCovered ([], "Sunday")) .toBe(false);

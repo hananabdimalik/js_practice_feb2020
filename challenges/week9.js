@@ -66,7 +66,6 @@ return newStr.toString(' ').replace(/[^a-zA-Z0-9]/g, "")
  */
 const isItPrime = n => {
   if (n === undefined) throw new Error("n is required");
-  //console.log(n)
   for (let i=0; i < n.length; i++){
     if (n[i] % 2 === 1){
       return true
@@ -89,6 +88,7 @@ const isItPrime = n => {
 const createMatrix = (n, fill) => {
   if (n === undefined) throw new Error("n is required");
   if (fill === undefined) throw new Error("fill is required");
+
 };
 
 /**
