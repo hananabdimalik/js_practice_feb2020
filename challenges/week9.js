@@ -25,14 +25,34 @@ const sumMultiples = arr => {
  * @returns {Boolean}
  */
 const isValidDNA = str => {
-  if (str === undefined) throw new Error("str is required");
+  if (!str) throw new Error("str is required");
+
+
   for (let i = 0; i < str.length; i++) {
-    if (str[i].includes('A', 'C', 'T', 'G')) {
-      return true
+    if (str[i] === "A" || str[i] === "T" || str[i] === "C" || str[i] === "G") {
+      continue
+    } else {
+      return false
     }
   }
-  return false
+  return true
 };
+//   for (let i = 0; i < str.length; i++) {
+//     if (str[i].includes('A')) {
+//       continue
+//     } else if (str[i].includes("T")){
+// continue
+//     } else if (str[i].includes("C")){
+//       continue
+//     } else if (str[i].includes("G")){
+//       continue
+//     }
+//     else {
+//       return false
+//     }
+//   }
+//   return true;
+
 
 /**
  * This function will receive a valid DNA string (see above) and should return a string of the complementary base pairs. In DNA, T always pairs with A, and C always pairs with G. So a string of "ACTG" would have a complementary DNA string of "TGAC".
@@ -41,6 +61,11 @@ const isValidDNA = str => {
  */
 const getComplementaryDNA = str => {
   if (str === undefined) throw new Error("str is required");
+
+  if (!isValidDNA(str)) {
+    throw new Error("valid DNA characters required");
+  }
+
   let newStr = []
   for (let i = 0; i < str.length; i++) {
     if (str[i] === 'A') {
@@ -52,8 +77,11 @@ const getComplementaryDNA = str => {
     } else if (str[i] === 'G') {
       newStr.push('C')
     }
+    //  else {
+    //   throw new Error("valid DNA characters required");
+    // }
   }
-  // console.log(newStr.toString('').replace(/[^a-zA-Z0-9]/g, ""))
+  console.log(newStr.toString('').replace(/[^a-zA-Z0-9]/g, ""))
   return newStr.toString(' ').replace(/[^a-zA-Z0-9]/g, "")
 };
 
@@ -97,7 +125,8 @@ const createMatrix = (n, fill) => {
   for (let i = 0; i < n; i++) {
     replicateArr.push(fill)
   }
-  return Array(n).fill(Array(replicateArr)).flat()
+  console.log(Array(n).fill(replicateArr))
+  return Array(n).fill(replicateArr)
 };
 
 /**
@@ -116,23 +145,26 @@ const areWeCovered = (staff, day) => {
   if (staff === undefined) throw new Error("staff is required");
   if (day === undefined) throw new Error("day is required");
 
-
-  for (let i = 0; i < day.length; i++) {
-    //console.log(day)
-    if (day.length > 1 && staff.length === 0) {
-      return false
-    } else if (day.length > 1 && staff.length > 3) {
-      return false
-    } else if (day.length > 1 && staff.length === 3) {
-      return true;
+  let count = 0;
+  if (staff.length < 3) {
+    return false
+  }
+  for (let i = 0; i < staff.length; i++) {
+    if (staff[i].rota.includes(day)) {
+      count += 1
     }
   }
+  if (count >= 3) {
+    return true
+  } else {
+    return false
+  }
 };
-module.exports = {
-  sumMultiples,
-  isValidDNA,
-  getComplementaryDNA,
-  isItPrime,
-  createMatrix,
-  areWeCovered
-};
+  module.exports = {
+    sumMultiples,
+    isValidDNA,
+    getComplementaryDNA,
+    isItPrime,
+    createMatrix,
+    areWeCovered
+  };
