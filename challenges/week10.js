@@ -3,8 +3,10 @@
  * @param {Number} n
  */
 const sumDigits = n => {
-  if (n === undefined) throw new Error("n is required");
+ 
 };
+
+//
 
 /**
  * This function creates a range of numbers as an array. It received a start, an end and a step. Step is the gap between numbers in the range. For example, if start = 3, end = 11 and step = 2 the resulting range would be: [3, 5, 7, 9, 11]
@@ -17,6 +19,7 @@ const sumDigits = n => {
 const createRange = (start, end, step) => {
   if (start === undefined) throw new Error("start is required");
   if (end === undefined) throw new Error("end is required");
+
 };
 
 /**
@@ -49,9 +52,12 @@ const createRange = (start, end, step) => {
  * @param {Array} users
  */
 const getScreentimeAlertList = (users, date) => {
-  if (users === undefined) throw new Error("users is required");
-  if (date === undefined) throw new Error("date is required");
+
+  //if (users === undefined) throw new Error("users is required");
+  //if (date === undefined) throw new Error("date is required");
+
 };
+
 
 /**
  * This function will receive a hexadecimal color code in the format #FF1133. A hexadecimal code is a number written in hexadecimal notation, i.e. base 16. If you want to know more about hexadecimal notation:
@@ -65,7 +71,18 @@ const getScreentimeAlertList = (users, date) => {
  */
 const hexToRGB = hexStr => {
   if (hexStr === undefined) throw new Error("hexStr is required");
+let equivalent = {
+  FF : 'r',
+  11 : 'g',
+  33 : 'b',
+  F : 15,
+   
+
+}
+
 };
+
+//loop through the string,if 
 
 /**
  * This function takes a noughts and crosses board represented as an array, where an empty space is represented with null.

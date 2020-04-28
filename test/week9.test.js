@@ -131,8 +131,6 @@ describe("isValidDNA", () => {
             ]);
         });
     });
-
-
     describe("areWeCovered", () => {
 
         test("returns and error message if n is undefined", () => {
@@ -162,7 +160,8 @@ describe("isValidDNA", () => {
                 { name: 'Betty', rota: ["Monday", "Tuesday"] },
 
             ];
-            expect(areWeCovered(staff, "wednesday")).toBe(false);
+            expect(areWeCovered(staff, "wednesday"))
+            .toBe(false);
         });
 
         test("return true if there are 3 staff scheduled to work", () => {

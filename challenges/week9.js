@@ -77,14 +77,15 @@ const getComplementaryDNA = str => {
     } else if (str[i] === 'G') {
       newStr.push('C')
     }
-    //  else {
-    //   throw new Error("valid DNA characters required");
+    //   //  else {
+    //   //   throw new Error("valid DNA characters required");
+    //   // }
     // }
-  }
-  console.log(newStr.toString('').replace(/[^a-zA-Z0-9]/g, ""))
-  return newStr.toString(' ').replace(/[^a-zA-Z0-9]/g, "")
-};
+    // console.log(newStr.toString('').replace(/[^a-zA-Z0-9]/g, ""))
 
+  };
+  return newStr.toString(' ').replace(/[^a-zA-Z0-9]/g, "")
+}
 
 
 /**
@@ -95,11 +96,11 @@ const getComplementaryDNA = str => {
 const isItPrime = n => {
   if (n === undefined) throw new Error("n is required");
 
-  for (let i = 2; i < n; i++) {
-    if (n % i === 0) {
-      return false;
-    }
+  // for (let i = 2; i < n; i++) {
+  if (n % 2 === 0) {
+    return false;
   }
+  // }
   return true
 }
 
@@ -125,7 +126,6 @@ const createMatrix = (n, fill) => {
   for (let i = 0; i < n; i++) {
     replicateArr.push(fill)
   }
-  console.log(Array(n).fill(replicateArr))
   return Array(n).fill(replicateArr)
 };
 
@@ -153,6 +153,7 @@ const areWeCovered = (staff, day) => {
     if (staff[i].rota.includes(day)) {
       count += 1
     }
+    // console.log(count)
   }
   if (count >= 3) {
     return true
@@ -160,11 +161,11 @@ const areWeCovered = (staff, day) => {
     return false
   }
 };
-  module.exports = {
-    sumMultiples,
-    isValidDNA,
-    getComplementaryDNA,
-    isItPrime,
-    createMatrix,
-    areWeCovered
-  };
+module.exports = {
+  sumMultiples,
+  isValidDNA,
+  getComplementaryDNA,
+  isItPrime,
+  createMatrix,
+  areWeCovered
+};
