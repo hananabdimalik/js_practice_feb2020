@@ -3,7 +3,14 @@
  * @param {Number} n
  */
 const sumDigits = n => {
- 
+  if (n === undefined) throw new Error("n is required");
+  if(!n) throw new Error("a number is required");
+  let count = 0
+  while (n){
+    count += n % 10;
+    n= Math.floor(n/10);
+  }
+  return count;
 };
 
 //
