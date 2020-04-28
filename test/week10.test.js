@@ -73,3 +73,8 @@ describe("getScreenTimeAlertList", () => {
     });
 });
 
+describe("hexToRGB", () => {
+    test("transform the hex code into an RGB code in the format", () => {
+        expect(hexToRGB("#FF1133")).toBe("rgb(255,17,51)")
+    })
+})
