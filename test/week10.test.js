@@ -68,13 +68,36 @@ describe("getScreenTimeAlertList", () => {
                         { date: "2019-06-14", usage: { mapMyRun: 0, whatsApp: 0, facebook: 0, safari: 31 } },//31
                     ]
                 },
-            ])
-        ).toBe(["beth_1234"])
+            ],"2019-05-04" )
+        ).toEqual(["beth_1234"])
     });
 });
 
 describe("hexToRGB", () => {
     test("transform the hex code into an RGB code in the format", () => {
         expect(hexToRGB("#FF1133")).toBe("rgb(255,17,51)")
-    })
-})
+    });
+});
+describe("findWinner", () => {
+    test("returns 'X' if player X has won",() => {
+        expect(findWinner([
+             ["X", "0", null],
+             ["X", null, "0"],
+             ["X", null, "0"]
+             ])).toBe('X')
+    });
+    test("returns  '0' if the player 0 has won",() => {
+        expect(findWinner([
+             ["X","X", "0"],
+             ["X", "0", "0"],
+             [null, "X", "0"]
+             ])).toBe('0')
+    });
+    test("returns null if there is currently no winner",() => {
+        expect(findWinner([
+             ["X", "0", null],
+             [null, null, "0"],
+             ["X",null,"0" ]
+             ])).toBe(null)
+    });
+});
