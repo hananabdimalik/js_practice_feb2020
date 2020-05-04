@@ -63,8 +63,8 @@ const createRange = (start, end, step) => {
  */
 const getScreentimeAlertList = (users, date) => {
 
-  //if (users === undefined) throw new Error("users is required");
-  //if (date === undefined) throw new Error("date is required");
+  if (users === undefined) throw new Error("users is required");
+  if (date === undefined) throw new Error("date is required");
   const userArray = [];
   for (let i = 0; i < users.length; i++) {
     const user = users[i];
